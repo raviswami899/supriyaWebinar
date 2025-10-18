@@ -91,7 +91,7 @@
       transform: rotate(30deg);
     }
 
-    .banner-section {
+    /* .banner-section {
       position: relative;
       height: 90vh;
       overflow: hidden;
@@ -169,7 +169,181 @@
     .btn-edit:hover {
       background: rgba(255,255,255,0.25);
       transform: scale(1.05);
-    }
+    } */
+
+    .banner-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; /* Minimum height for very small content */
+  padding: 80px 20px; /* Generous padding for all screen sizes */
+}
+
+.banner-section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+.banner-overlay {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  max-width: 1200px;
+  width: 100%;
+  z-index: 2;
+}
+
+.banner-overlay h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  line-height: 1.2;
+}
+
+.banner-overlay p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  opacity: 0.9;
+  max-width: 800px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
+}
+
+.countdown-item {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  min-width: 70px;
+  backdrop-filter: blur(10px);
+}
+
+.countdown-number {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+  flex-wrap: wrap; /* Wrap on small screens */
+  justify-content: center;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 10px;
+}
+
+.stat-number {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.btn-edit {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
+  padding: 12px 25px;
+  transition: all 0.3s;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.btn-edit:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.05);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .banner-section {
+    padding: 60px 15px;
+    min-height: 90vh; /* Slightly taller on mobile for better appearance */
+  }
+  
+  .banner-overlay {
+    padding: 0 10px;
+  }
+  
+  .countdown {
+    gap: 10px;
+  }
+  
+  .countdown-item {
+    padding: 12px 8px;
+    min-width: 60px;
+  }
+  
+  .stats-container {
+    gap: 20px;
+  }
+  
+  .stat-item {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-section {
+    padding: 40px 10px;
+  }
+  
+  .countdown {
+    gap: 8px;
+  }
+  
+  .countdown-item {
+    padding: 10px 6px;
+    min-width: 55px;
+  }
+  
+  .stats-container {
+    gap: 15px;
+  }
+  
+  .btn-edit {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
 
     .video-section iframe {
       border-radius: 20px;
