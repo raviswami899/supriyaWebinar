@@ -145,6 +145,7 @@
     .new-description {
       text-align: left;
       max-width: 800px;
+      min-width: 60%;
       background: rgba(255,255,255,0.1);
       padding: 25px;
       border-radius: 15px;
@@ -504,6 +505,34 @@
         font-size: 0.9rem;
       }
     }
+
+    .highlight-text {
+    background: linear-gradient(90deg, #f1c40f, #e67e22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  .carousel-item img {
+    min-height: 800px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: auto;
+    }
+  }
+
+  .benefit-icon i {
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
+  .description-section p {
+    line-height: 1.7;
+    font-size: 1rem;
+  }
   </style>
 </head>
 <body>
@@ -516,28 +545,38 @@
     </button>
   </div>
   
+  
   <div class="summary-container">
     <div class="banner-section">
-      <img src="https://i.pinimg.com/1200x/49/62/d1/4962d15328ee2c9aafdfeb46f2d5955a.jpg" alt="Bharatanatyam Dancer">
+      
+      <img src="assets/images/banner.HEIC" alt="Bharatanatyam Dancer">
       <div class="banner-overlay">
-        <h1>Exploring Bharatanatyam</h1>
-        
         <!-- New Description Section -->
-        <div class="new-description">
-          <div class="attention-grabber">"Please, don't join this Bharatnatyam workshop… seriously!" 😱</div>
-          <p>Because in just 2 hours, you might fall in love with Bharatanatyam…<br>
-          You'll understand its beauty, its discipline, and the grace behind every movement.</p>
+        <h1><span class="highlight-text">Bharatanatyam – Prarambhik (Basic) Workshop</span></h1>
+        <div class="new-description text-center mb-5">
+          <div class="ratio ratio-16x9 mb-4">
+            <video controls autoplay loop muted playsinline poster="assets/bharatnatyam-thumbnail.jpg">
+              <source src="assets/videos/bharatnatyam-prarambhik.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
           
           <ul class="benefit-list">
-            <li>"You'll realise posture is everything or best exercise which will ease you to learn Bharatnatyam (exercises shown)</li>
-            <li>The secret behind Namaskaram 🙏"</li>
-            <li>"And yes… your first Tatta Adavu!</li>
-            <li>Last but not the least... quick understanding of the whole Margam!"</li>
+            <li>🌸 Introduction to Bharatnatyam – the art of divine expression</li>
+            <li>🧘‍♀️ Learn essential postures and graceful movements</li>
+            <li>🥁 Understanding rhythm and the foundation of Adavus</li>
+            <li>🙏 Experience the spiritual depth behind each performance</li>
           </ul>
+
+          <div class="warning">✨ "A perfect introduction for anyone eager to begin their journey into Bharatanatyam!"</div>
           
-          <div class="warning">Don't join if you're not ready to fall in love with Bharatanatyam!</div>
         </div>
-        
+      
+        <div class="countdown-item">
+          <div class="countdown-number">8th Nov, 2025 </div>
+          <div class="countdown-label">7:30PM - 9:30PM</div>
+        </div>
+
         <div class="countdown">
           <div class="countdown-item">
             <div class="countdown-number" id="days">00</div>
@@ -559,8 +598,8 @@
         
         <div class="stats-container">
           <div class="stat-item">
-            <div class="stat-number">850+</div>
-            <div class="stat-label">Enrolled</div>
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Students</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">4.8</div>
@@ -576,23 +615,16 @@
           <i class="bi bi-share"></i> Share This Webinar
         </button>
       </div>
+      
     </div>
 
     <!-- Rest of the content remains the same -->
     <div class="container p-4">
-      <div class="progress-section">
-        <div class="enrollment-info">
-          <span>Limited spots available</span>
-          <span>65% filled</span>
-        </div>
-        <div class="progress">
-          <div class="progress-bar" style="width: 65%"></div>
-        </div>
-      </div>
-
+      
+     
       <div class="video-section mb-5">
         <iframe
-          src="https://www.youtube.com/embed/VALPwxfAxSk?autoplay=1&mute=1"
+          src="https://www.youtube.com/embed/V0-m8SV5a54?autoplay=1&mute=1"
           frameborder="0"
           allow="autoplay; encrypted-media"
           allowfullscreen>
@@ -601,9 +633,12 @@
 
       <div id="supportCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active"><img src="https://i.pinimg.com/1200x/e1/a5/08/e1a508edab24e30b35b48bdec37a9f35.jpg" class="d-block w-100" alt="Bharatanatyam Pose"></div>
-          <div class="carousel-item"><img src="https://i.pinimg.com/736x/84/f1/c2/84f1c2c59ec1d1060fa85ad9d704493b.jpg" class="d-block w-100" alt="Bharatanatyam Performance"></div>
-          <div class="carousel-item"><img src="https://i.pinimg.com/1200x/54/ff/a1/54ffa1209b898bf2252a5cf0f61dc1e9.jpg" class="d-block w-100" alt="Bharatanatyam Dancer"></div>
+          <div class="carousel-item active"><img src="assets/images/cr_1.HEIC" class="d-block w-100" alt="Bharatanatyam Pose"></div>
+          <div class="carousel-item"><img src="assets/images/cr_2.HEIC" class="d-block w-100" alt="Bharatanatyam Performance"></div>
+          <div class="carousel-item"><img src="assets/images/cr_3.HEIC" class="d-block w-100" alt="Bharatanatyam Dancer"></div>
+          <div class="carousel-item"><img src="assets/images/cr_4.HEIC" class="d-block w-100" alt="Bharatanatyam Performance"></div>
+          <div class="carousel-item"><img src="assets/images/cr_5.HEIC" class="d-block w-100" alt="Bharatanatyam Dancer"></div>
+          <div class="carousel-item"><img src="assets/images/cr_6.HEIC" class="d-block w-100" alt="Bharatanatyam Dancer"></div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#supportCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
@@ -615,107 +650,65 @@
 
       <div class="description-section">
         <h3>About the Webinar</h3>
-        <p class="mt-3">In this immersive session, acclaimed Bharatanatyam artist Supriya Kelkar will guide you through the fundamentals of this ancient Indian classical dance form. Discover the intricate hand gestures (mudras), facial expressions (abhinaya), and rhythmic footwork that make Bharatanatyam a complete storytelling art. The webinar includes live demonstrations, interactive Q&A sessions, and opportunities to connect with fellow dance enthusiasts.</p>
-        
+        <p class="mt-3">
+          Step into the world of classical elegance with <strong class="highlight-text">Supriya Kelkar</strong> 🌸.  
+          Join this beautifully crafted <span class="highlight-text">Prarambhik (Basic) </span>session to explore the soulful expressions, rhythm, and foundational postures that define Bharatanatyam.  
+          Whether you’re a beginner or simply curious about Indian classical dance, this webinar will help you experience the discipline, grace, and devotion behind every movement.
+        </p>
+      
         <div class="what-you-get mt-4">
-          <h5>What You'll Get:</h5>
+          <h5>In this interactive session, you’ll gain:</h5>
+      
           <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="bi bi-play-circle"></i>
-            </div>
-            <div>6+ hours of instructional content</div>
+            <div class="benefit-icon"><i class="bi bi-play-circle"></i></div>
+            <div>Insight into the heritage and significance of Bharatanatyam</div>
           </div>
+      
           <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="bi bi-file-text"></i>
-            </div>
-            <div>Downloadable resources and practice guides</div>
+            <div class="benefit-icon"><i class="bi bi-person-standing"></i></div>
+            <div>Hands-on guidance on basic postures and movements</div>
           </div>
+      
           <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="bi bi-chat-dots"></i>
-            </div>
-            <div>Live Q&A sessions with Supriya Kelkar</div>
+            <div class="benefit-icon"><i class="bi bi-music-note-beamed"></i></div>
+            <div>Understanding of <span class="highlight-text">rhythm (Tala)</span> and <span class="highlight-text">expression (Abhinaya)</span></div>
           </div>
+      
           <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="bi bi-award"></i>
-            </div>
-            <div>Certificate of participation</div>
+            <div class="benefit-icon"><i class="bi bi-chat-dots"></i></div>
+            <div>Live Q&A to discuss techniques and training paths</div>
+          </div>
+      
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="bi bi-people"></i></div>
+            <div>Connect with dance enthusiasts and practitioners globally</div>
+          </div>
+      
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="bi bi-award"></i></div>
+            <div>Certificate of Participation upon completion</div>
           </div>
         </div>
       </div>
+      
+      
 
       <div class="instructor-section">
         <h3>Meet Your Instructor</h3>
-        <img src="https://supriyakelkar.in/wp-content/uploads/2024/05/Frame-33.jpg" class="instructor-img" alt="Supriya Kelkar">
+        <img src="assets/images/profile_pic.HEIC" class="instructor-img" alt="Supriya Kelkar">
         <div class="instructor-card mt-4">
           <div class="instructor-info">
             <h4>Supriya Kelkar</h4>
             <div class="instructor-title">Bharatanatyam Artist & Instructor</div>
-            <p class="mt-2">With over 15 years of experience in Bharatanatyam, Supriya has performed at prestigious venues worldwide and has taught hundreds of students. Trained under renowned gurus, she brings both traditional technique and contemporary interpretation to her teaching.</p>
+            <p class="mt-2">
+              With over 25 years of experience in Bharatanatyam, Supriya Kerkar has performed at prestigious venues across the globe, sharing the stage with eminent artists such as Hema Malini and her revered guru, <span class="highlight-text">Mrs. Tamanna Nair.</span> A Bharatanatyam Visharad from the Akhil Bhartiya Gandharva Mahavidyalaya, Supriya completed her formal training in 1999. & Bcom in 2003
+Having taught and mentored over 500 students, she continues to uphold the classical traditions of Bharatanatyam while bringing in fresh, contemporary interpretations that make her teaching both rooted and relevant.
+            </p>
           </div>
         </div>
       </div>
 
-      <h3 class="mt-5 mb-3">Event Schedule</h3>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="event-card">
-            <h5>Day 1: Fundamentals</h5>
-            <div class="event-time">Nov 15 | 6:00 PM - 8:00 PM EST</div>
-            <p class="mt-2">Introduction to Bharatanatyam history, basic postures (Aramandi), and hand gestures (Asamyuta Hastas).</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="event-card">
-            <h5>Day 2: Expression & Rhythm</h5>
-            <div class="event-time">Nov 16 | 6:00 PM - 8:00 PM EST</div>
-            <p class="mt-2">Exploring facial expressions (Abhinaya), footwork (Adavus), and introduction to rhythmic patterns (Tala).</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="event-card">
-            <h5>Day 3: Storytelling & Performance</h5>
-            <div class="event-time">Nov 17 | 6:00 PM - 8:00 PM EST</div>
-            <p class="mt-2">Learn to express stories through dance, understand performance structure, and put together a short piece.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonials-section mt-5">
-        <h3 class="mb-4">What Participants Say</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="testimonial-card">
-              <div class="testimonial-text">
-                "Supriya's teaching style made this ancient art form accessible and engaging. I've gained a deep appreciation for Bharatanatyam that I'll carry with me forever."
-              </div>
-              <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786" alt="Priya">
-                <div>
-                  <strong>Priya Sharma</strong>
-                  <div class="instructor-title">Dance Student</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="testimonial-card">
-              <div class="testimonial-text">
-                "As someone completely new to Indian classical dance, I found Supriya's explanations clear and inspiring. The cultural context she provided was invaluable."
-              </div>
-              <div class="testimonial-author">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" alt="James">
-                <div>
-                  <strong>James Wilson</strong>
-                  <div class="instructor-title">Cultural Enthusiast</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="faq-section">
         <h3 class="mb-4">Frequently Asked Questions</h3>
@@ -777,7 +770,7 @@
   <script>
     // Countdown Timer
     function updateCountdown() {
-      const targetDate = new Date('November 15, 2025 18:00:00').getTime();
+      const targetDate = new Date("November 8, 2025 19:30:00").getTime();
       const now = new Date().getTime();
       const timeLeft = targetDate - now;
       
