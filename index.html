@@ -24,18 +24,47 @@
       min-height: 100vh;
       font-family: 'Poppins', sans-serif;
       overflow-x: hidden;
+      padding-top: 70px;
     }
 
     .summary-container {
       max-width: 1200px;
       margin: 60px auto;
-      margin-top: 120px;
       background: rgba(255,255,255,0.05);
       border-radius: 20px;
       backdrop-filter: blur(10px);
       box-shadow: 0 0 25px rgba(0,0,0,0.4);
       overflow: hidden;
       position: relative;
+    }
+
+    .navbar-custom {
+      background: rgba(10, 10, 35, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      padding: 12px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.8) !important;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .nav-link:hover {
+      color: var(--accent) !important;
     }
 
     .header-actions {
@@ -145,7 +174,7 @@
     .new-description {
       text-align: left;
       max-width: 800px;
-      min-width: 60%;
+      width: 100%;
       background: rgba(255,255,255,0.1);
       padding: 25px;
       border-radius: 15px;
@@ -364,11 +393,11 @@
     .benefit-icon {
       width: 40px;
       height: 40px;
-      background: var(--gradient);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: var(--gradient);
     }
 
     .testimonial-card {
@@ -450,10 +479,45 @@
       opacity: 0.8;
     }
 
+    .highlight-text {
+      background: linear-gradient(90deg, #f1c40f, #e67e22);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .carousel-item {
+  height: 500px; /* fixed height for all slides */
+  overflow: hidden; /* hide any image overflow */
+}
+
+.carousel-item img {
+  width: 100%;              /* make image fill carousel width */
+  height: 100%;             /* make image fill carousel height */
+  object-fit:contain;        /* maintain aspect ratio and crop if needed */
+  object-position: center;  /* center the image nicely */
+  display: block;
+}
+
+    .benefit-icon i {
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    .description-section p {
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* Mobile-First Responsive Styles */
     @media (max-width: 768px) {
+      body {
+        padding-top: 60px;
+      }
+      
       .banner-section {
-        padding: 60px 15px;
-        min-height: 90vh;
+        padding: 40px 15px;
+        min-height: auto;
       }
       
       .banner-overlay {
@@ -480,11 +544,37 @@
       .new-description {
         padding: 15px;
       }
+      
+      .carousel-item img {
+        height: auto;
+      }
+      
+      .instructor-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .instructor-img {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .video-section iframe {
+        height: 250px;
+      }
+      
+      .header-actions {
+        position: relative;
+        top: auto;
+        right: auto;
+        justify-content: center;
+        margin-top: 20px;
+      }
     }
 
     @media (max-width: 480px) {
       .banner-section {
-        padding: 40px 10px;
+        padding: 30px 10px;
       }
       
       .countdown {
@@ -506,53 +596,78 @@
       }
     }
 
-    .highlight-text {
-    background: linear-gradient(90deg, #f1c40f, #e67e22);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-  }
-
-  .carousel-item img {
-    min-height: 800px;
-    object-fit: cover;
-  }
-
-  @media (max-width: 768px) {
-    .carousel-item img {
-      height: auto;
+    /* Floating Action Button for Mobile */
+    .floating-action-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: var(--gradient);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(142, 68, 173, 0.6);
+      transition: all 0.3s;
+      display: none;
     }
-  }
-
-  .benefit-icon i {
-    font-size: 1.4rem;
-    color: #fff;
-  }
-
-  .description-section p {
-    line-height: 1.7;
-    font-size: 1rem;
-  }
+    
+    .floating-action-btn:hover {
+      transform: scale(1.1);
+    }
+    
+    @media (max-width: 768px) {
+      .floating-action-btn {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="header-actions">
-    <button class="purchase-btn">
-      <i class="bi bi-cart-check"></i>
-      Enroll Now
-      <span class="price-tag">$49.00</span>
-    </button>
+  <!-- Responsive Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="#">Bharatanatyam - Prarambhik (Basic) Workshop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <i class="bi bi-list" style="color: white;"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#instructor">Instructor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#benefits">Benefits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Floating Action Button for Mobile -->
+  <div class="floating-action-btn" onclick="scrollToPurchase()">
+    <i class="bi bi-cart-check"></i>
   </div>
-  
-  
+
   <div class="summary-container">
     <div class="banner-section">
       
       <img src="assets/images/banner.HEIC" alt="Bharatanatyam Dancer">
       <div class="banner-overlay">
         <!-- New Description Section -->
-        <h1><span class="highlight-text">Bharatanatyam – Prarambhik (Basic) Workshop</span></h1>
+        <!-- <h1><span class="highlight-text">Bharatanatyam – Prarambhik (Basic) Workshop</span></h1> -->
         <div class="new-description text-center mb-5">
           <div class="ratio ratio-16x9 mb-4">
             <video controls autoplay loop muted playsinline poster="assets/bharatnatyam-thumbnail.jpg">
@@ -621,6 +736,13 @@
     <!-- Rest of the content remains the same -->
     <div class="container p-4">
       
+      <div class="header-actions">
+        <button class="purchase-btn">
+          <i class="bi bi-cart-check"></i>
+          Enroll Now
+          <span class="price-tag">$49.00</span>
+        </button>
+      </div>
      
       <div class="video-section mb-5">
         <iframe
@@ -648,16 +770,16 @@
         </button>
       </div>
 
-      <div class="description-section">
+      <div class="description-section" id="about">
         <h3>About the Webinar</h3>
         <p class="mt-3">
           Step into the world of classical elegance with <strong class="highlight-text">Supriya Kelkar</strong> 🌸.  
           Join this beautifully crafted <span class="highlight-text">Prarambhik (Basic) </span>session to explore the soulful expressions, rhythm, and foundational postures that define Bharatanatyam.  
-          Whether you’re a beginner or simply curious about Indian classical dance, this webinar will help you experience the discipline, grace, and devotion behind every movement.
+          Whether you're a beginner or simply curious about Indian classical dance, this webinar will help you experience the discipline, grace, and devotion behind every movement.
         </p>
       
-        <div class="what-you-get mt-4">
-          <h5>In this interactive session, you’ll gain:</h5>
+        <div class="what-you-get mt-4" id="benefits">
+          <h5>In this interactive session, you'll gain:</h5>
       
           <div class="benefit-item">
             <div class="benefit-icon"><i class="bi bi-play-circle"></i></div>
@@ -691,12 +813,11 @@
         </div>
       </div>
       
-      
-
-      <div class="instructor-section">
+      <div class="instructor-section" id="instructor">
         <h3>Meet Your Instructor</h3>
         <img src="assets/images/profile_pic.HEIC" class="instructor-img" alt="Supriya Kelkar">
         <div class="instructor-card mt-4">
+          
           <div class="instructor-info">
             <h4>Supriya Kelkar</h4>
             <div class="instructor-title">Bharatanatyam Artist & Instructor</div>
@@ -708,9 +829,7 @@ Having taught and mentored over 500 students, she continues to uphold the classi
         </div>
       </div>
 
-      
-
-      <div class="faq-section">
+      <div class="faq-section" id="faq">
         <h3 class="mb-4">Frequently Asked Questions</h3>
         <div class="accordion" id="faqAccordion">
           <div class="accordion-item">
@@ -801,6 +920,28 @@ Having taught and mentored over 500 students, she continues to uphold the classi
     purchaseBtn.addEventListener('click', function() {
       // In a real application, this would open a payment modal
       alert('Redirecting to enrollment page...');
+    });
+
+    // Function to scroll to purchase section
+    function scrollToPurchase() {
+      const purchaseSection = document.querySelector('.purchase-btn');
+      purchaseSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
     });
   </script>
 </body>
